@@ -29,7 +29,7 @@ public class Scene extends JPanel implements Runnable{
     }
 
     private void setSceneSize() {
-        Dimension size = new Dimension(SCENE_WIDTH, SCENE_HEIGHT);
+        Dimension size = new Dimension(SCENE_WIDTH + 200, SCENE_HEIGHT);
         setPreferredSize(size);
         setBackground(Color.BLACK);
         setDoubleBuffered(true);

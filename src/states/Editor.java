@@ -54,7 +54,10 @@ public class Editor extends State implements StateMethods{
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        switch(e.getKeyCode()) {
+//            case KeyEvent.VK_W -> zoomInOut(1);
+//            case KeyEvent.VK_D -> zoomInOut(-1);
+        }
     }
 
     @Override
