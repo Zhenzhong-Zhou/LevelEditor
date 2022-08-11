@@ -48,7 +48,7 @@ public class LevelManager {
 
         while(worldCol < MAX_SCREEN_COL && worldRow < MAX_SCREEN_ROW) {
             int id = level[worldCol][worldRow];
-            graphics2D.drawImage(tileManager.getTile(id), worldCol * TILE_SIZE, worldRow * TILE_SIZE, null);
+            graphics2D.drawImage(tileManager.getSprite(id), worldCol * TILE_SIZE, worldRow * TILE_SIZE, null);
             worldCol++;
 
             if(worldCol == MAX_SCREEN_COL) {
@@ -56,5 +56,13 @@ public class LevelManager {
                 worldRow++;
             }
         }
+    }
+
+    public TileManager getTileManager() {
+        return tileManager;
+    }
+
+    public int[][] getTileId() {
+        return level;
     }
 }

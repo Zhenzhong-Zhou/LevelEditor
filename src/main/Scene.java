@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import static states.GameState.*;
+import static utilities.Constant.GUI.ToolBar.BAR_WIDTH;
 import static utilities.Constant.GameConstant.FPS_SET;
 import static utilities.Constant.GameConstant.UPS_SET;
 import static utilities.Constant.SceneConstant.SCENE_HEIGHT;
@@ -29,7 +30,7 @@ public class Scene extends JPanel implements Runnable{
     }
 
     private void setSceneSize() {
-        Dimension size = new Dimension(SCENE_WIDTH + 200, SCENE_HEIGHT);
+        Dimension size = new Dimension(SCENE_WIDTH + BAR_WIDTH, SCENE_HEIGHT);
         setPreferredSize(size);
         setBackground(Color.BLACK);
         setDoubleBuffered(true);

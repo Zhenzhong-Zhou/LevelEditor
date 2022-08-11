@@ -3,8 +3,10 @@ package gui;
 import states.GameState;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
-import static utilities.LoadSave.*;
+import static utilities.LoadSave.GetFont;
+import static utilities.LoadSave.MARU_MONICA;
 
 public class Button {
     private final int x;
@@ -13,10 +15,14 @@ public class Button {
     private final int height;
     private final String buttonName;
     private final GameState gameState;
+    private final int id;
     private Rectangle bounds;
     private boolean mouseHover, mousePressed;
     private Font maruMonica, purisaB;
 
+    /**
+     * Menu Buttons
+     */
     public Button(int x, int y, int width, int height, String buttonName, GameState gameState) {
         this.x = x;
         this.y = y;
@@ -24,6 +30,22 @@ public class Button {
         this.height = height;
         this.buttonName = buttonName;
         this.gameState = gameState;
+        this.id = - 1;
+        initBounds();
+        initFont();
+    }
+
+    /**
+     * Tile Buttons
+     */
+    public Button(int x, int y, int width, int height, String buttonName, int id) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.buttonName = buttonName;
+        this.gameState = null;
+        this.id = id;
         initBounds();
         initFont();
     }
@@ -34,7 +56,6 @@ public class Button {
 
     private void initFont() {
         maruMonica = GetFont(MARU_MONICA);
-        purisaB = GetFont(PURISA_BOLD);
     }
 
     public void draw(Graphics2D graphics2D) {
@@ -74,6 +95,10 @@ public class Button {
         graphics2D.drawString(buttonName, x - widthName / 2 + width / 2, y + heightName / 2 + height / 2);
     }
 
+    public boolean isBound(MouseEvent e, Button button) {
+        return button.getBounds().contains(e.getX(), e.getY());
+    }
+
     public boolean isMouseHover() {
         return mouseHover;
     }
@@ -88,6 +113,10 @@ public class Button {
 
     public void setMousePressed(boolean mousePressed) {
         this.mousePressed = mousePressed;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Rectangle getBounds() {
