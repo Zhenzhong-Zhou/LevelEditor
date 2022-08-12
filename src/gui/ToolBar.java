@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import static utilities.Constant.GUI.ToolBar.*;
 import static utilities.Constant.SceneConstant.SCENE_WIDTH;
+import static utilities.Constant.SceneConstant.TILE_SIZE;
 
 public class ToolBar implements StateMethods {
     private final int x;
@@ -37,7 +38,7 @@ public class ToolBar implements StateMethods {
         ArrayList<Tile> tiles = editor.getLevelManager().getTileManager().getTiles();
         for(int i = 0; i < tiles.size(); i++) {
             Tile tile = tiles.get(i);
-            tileButtons.add(new Button(SCENE_WIDTH + 10,TILE_BUTTON_SIZE * 2 + X_OFFSET * i, TILE_BUTTON_SIZE, TILE_BUTTON_SIZE, tile.getTileName(), i));
+            tileButtons.add(new Button(SCENE_WIDTH + 10,TILE_BUTTON_SIZE * 2 + X_OFFSET * i, TILE_SIZE, TILE_SIZE, tile.getTileName(), i));
         }
     }
 
@@ -82,9 +83,9 @@ public class ToolBar implements StateMethods {
 
     private void drawSelectedTile(Graphics2D graphics2D) {
         if(selectedTile != null) {
-            graphics2D.drawImage(selectedTile.getSprite(), SCENE_WIDTH + 10, 30, TILE_BUTTON_SIZE, TILE_BUTTON_SIZE, null);
+            graphics2D.drawImage(selectedTile.getSprite(), SCENE_WIDTH + 10, 30, TILE_SIZE, TILE_SIZE, null);
             graphics2D.setColor(Color.GREEN);
-            graphics2D.drawRect(SCENE_WIDTH + 10, 30,  TILE_BUTTON_SIZE, TILE_BUTTON_SIZE);
+            graphics2D.drawRect(SCENE_WIDTH + 10, 30,  TILE_SIZE, TILE_SIZE);
         }
     }
 
