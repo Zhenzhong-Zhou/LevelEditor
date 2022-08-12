@@ -9,12 +9,13 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import static utilities.Constant.GUI.ToolBar.*;
+import static utilities.Constant.GUI.ToolBar.BAR_WIDTH;
+import static utilities.Constant.GUI.ToolBar.X_SELECTED_TILE;
 import static utilities.Constant.SceneConstant.*;
 
-public class Editor extends State implements StateMethods{
-    private LevelManager levelManager;
+public class Editor extends State implements StateMethods {
     private final ToolBar toolBar;
+    private final LevelManager levelManager;
     private Tile selectedTile;
     private int mouseX, mouseY;
     private int lastTileX, lastTileY, lastTileId;

@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-public class Menu extends State implements StateMethods{
+public class Menu extends State implements StateMethods {
     public Menu(Scene scene) {
         super(scene);
     }

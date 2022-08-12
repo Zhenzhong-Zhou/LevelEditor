@@ -6,7 +6,8 @@ import tiles.TileManager;
 import java.awt.*;
 
 import static utilities.Constant.SceneConstant.*;
-import static utilities.LoadSave.*;
+import static utilities.LoadSave.GetLevelData;
+import static utilities.LoadSave.SaveLevel;
 
 public class LevelManager {
     private final Scene scene;

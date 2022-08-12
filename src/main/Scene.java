@@ -6,19 +6,18 @@ import states.Editor;
 import states.Menu;
 import states.Options;
 
-
 import javax.swing.*;
-
 import java.awt.*;
 
-import static states.GameState.*;
+import static states.GameState.EDITOR;
+import static states.GameState.gameState;
 import static utilities.Constant.GUI.ToolBar.BAR_WIDTH;
 import static utilities.Constant.GameConstant.FPS_SET;
 import static utilities.Constant.GameConstant.UPS_SET;
 import static utilities.Constant.SceneConstant.SCENE_HEIGHT;
 import static utilities.Constant.SceneConstant.SCENE_WIDTH;
 
-public class Scene extends JPanel implements Runnable{
+public class Scene extends JPanel implements Runnable {
     private Thread thread;
     private Menu menu;
     private Editor editor;

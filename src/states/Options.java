@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-public class Options extends State implements StateMethods{
+public class Options extends State implements StateMethods {
     public Options(Scene scene) {
         super(scene);
     }
