@@ -17,6 +17,7 @@ public class Editor extends State implements StateMethods{
     private final ToolBar toolBar;
     private Tile selectedTile;
     private int mouseX, mouseY;
+    private int lastTileX, lastTileY, lastTileId;
     private boolean drawSelected;
 
     public Editor(Scene scene) {
@@ -53,10 +54,15 @@ public class Editor extends State implements StateMethods{
     }
 
     private void changeTile(int mouseX, int mouseY) {
-        int tileX = mouseX / TILE_SIZE;
-        int tileY = mouseY / TILE_SIZE;
+        if(selectedTile != null) {
+            int tileX = mouseX / TILE_SIZE;
+            int tileY = mouseY / TILE_SIZE;
 
-        levelManager.getTileId()[tileX][tileY] = selectedTile.getTileId();
+            if(lastTileX == tileX && lastTileY == tileY && lastTileId == selectedTile.getTileId()) return;
+            lastTileX = tileX;
+            lastTileY = tileY;
+            levelManager.getTileId()[tileX][tileY] = selectedTile.getTileId();
+        }
     }
 
 
@@ -88,7 +94,11 @@ public class Editor extends State implements StateMethods{
 
     @Override
     public void mouseDragged(MouseEvent e) {
-
+        if(e.getX() >= SCENE_WIDTH) {
+            toolBar.mouseDragged(e);
+        } else {
+            changeTile(e.getX(), e.getY());
+        }
     }
 
     @Override

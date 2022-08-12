@@ -3,7 +3,6 @@ package gui;
 import states.Editor;
 import states.StateMethods;
 import tiles.Tile;
-import gui.Button;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -11,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import static states.GameState.EDITOR;
 import static utilities.Constant.GUI.ToolBar.*;
 import static utilities.Constant.SceneConstant.SCENE_WIDTH;
 import static utilities.Constant.SceneConstant.TILE_SIZE;
@@ -21,9 +21,9 @@ public class ToolBar implements StateMethods {
     private final int width;
     private final int height;
     private final Editor editor;
-
     private final ArrayList<Button> tileButtons = new ArrayList<>();
     private Tile selectedTile;
+    private Button save;
 
     public ToolBar(int x, int y, int width, int height, Editor editor) {
         this.x = x;
@@ -35,6 +35,8 @@ public class ToolBar implements StateMethods {
     }
 
     private void initButtons() {
+        save = new Button(SCENE_WIDTH + 80, 30, 100, 50, "Save", EDITOR);
+
         ArrayList<Tile> tiles = editor.getLevelManager().getTileManager().getTiles();
         for(int i = 0; i < tiles.size(); i++) {
             Tile tile = tiles.get(i);
@@ -55,6 +57,7 @@ public class ToolBar implements StateMethods {
     }
 
     private void drawButtons(Graphics2D graphics2D) {
+        save.draw(graphics2D);
         drawTileButtons(graphics2D);
         drawSelectedTile(graphics2D);
     }
@@ -101,6 +104,10 @@ public class ToolBar implements StateMethods {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        if(save.isBound(e, save)) {
+            save.setMousePressed(true);
+        }
+
         for(Button button : tileButtons) {
             if(button.isBound(e, button)) {
                 button.setMousePressed(true);
@@ -110,6 +117,10 @@ public class ToolBar implements StateMethods {
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        if(save.isBound(e, save)) {
+            save.restBooleans();
+        }
+
         for(Button button : tileButtons) {
             if(button.isBound(e, button)) {
                 button.restBooleans();
@@ -119,8 +130,13 @@ public class ToolBar implements StateMethods {
 
     @Override
     public void mouseMoved(MouseEvent e) {
+        save.setMouseHover(false);
         for(Button button : tileButtons) {
             button.setMouseHover(false);
+        }
+
+        if(save.isBound(e, save)) {
+            save.setMouseHover(true);
         }
 
         for(Button button : tileButtons) {
