@@ -23,10 +23,10 @@ public class Constant {
             Actual Size
          */
         public static final int TILE_SIZE = (int) (ORIGINAL_TILES_SIZE * SCALE);    // 32*32 tile
-        public static final int SCENE_WIDTH = MAX_SCREEN_COL * TILE_SIZE;       // 1152 pixels
-        public static final int SCENE_HEIGHT = MAX_SCREEN_ROW * TILE_SIZE;      // 864 pixels
         public static final int MAX_SCREEN_COL = 45;
         public static final int MAX_SCREEN_ROW = 45;
+        public static final int SCENE_WIDTH = MAX_SCREEN_COL * TILE_SIZE;       // 1152 pixels
+        public static final int SCENE_HEIGHT = MAX_SCREEN_ROW * TILE_SIZE;      // 864 pixels
     }
 
     /**
