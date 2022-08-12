@@ -94,6 +94,10 @@ public class ToolBar implements StateMethods {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        if(save.isBound(e, save)) {
+            editor.getLevelManager().saveLevel();
+        }
+
         for(Button button : tileButtons) {
             if(button.isBound(e, button)) {
                 selectedTile = editor.getLevelManager().getTileManager().getTile(button.getId());

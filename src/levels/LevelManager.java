@@ -16,23 +16,9 @@ public class LevelManager {
     public LevelManager(Scene scene) {
         this.scene = scene;
         tileManager = new TileManager();
-        createDefaultLevel();
         loadDefaultLevel();
-        saveLevel();
     }
 
-    private void createDefaultLevel() {
-        int cols = MAX_SCREEN_COL;
-        int rows = MAX_SCREEN_ROW;
-        int[][] array = new int[cols][rows];
-
-        for(int i = 0; i < cols; i++) {
-            for(int j = 0; j < rows; j++) {
-                array[i][j] = 0;
-            }
-        }
-        CreateLevel(array);
-    }
 
     public void saveLevel() {
         SaveLevel(level);
