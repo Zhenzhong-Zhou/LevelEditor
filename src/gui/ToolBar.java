@@ -41,7 +41,12 @@ public class ToolBar implements StateMethods {
         ArrayList<Tile> tiles = editor.getLevelManager().getTileManager().getTiles();
         for(int i = 0; i < tiles.size(); i++) {
             Tile tile = tiles.get(i);
-            tileButtons.add(new Button(SCENE_WIDTH + 10, TILE_BUTTON_SIZE * 2 + X_OFFSET * i, TILE_SIZE, TILE_SIZE, tile.getTileName(), i));
+            if(i< 16) {
+                tileButtons.add(new Button(SCENE_WIDTH + 10, TILE_BUTTON_SIZE * 2 + X_OFFSET * i, TILE_SIZE, TILE_SIZE, tile.getTileName(), i));
+            }
+            else {
+                tileButtons.add(new Button(SCENE_WIDTH + 100, TILE_BUTTON_SIZE * 2 + X_OFFSET * (i - 16), TILE_SIZE, TILE_SIZE, tile.getTileName(), i));
+            }
         }
     }
 

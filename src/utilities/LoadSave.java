@@ -14,13 +14,45 @@ public class LoadSave {
     public static final String MARU_MONICA = "fonts/x12y16pxMaruMonica.ttf";
     public static final String PURISA_BOLD = "fonts/Purisa Bold.ttf";
 
-    // TILES
-    public static final String GRASS_IMAGE = "tiles/grass01.png";
-    public static final String WALL_IMAGE = "tiles/wall.png";
-    public static final String WATER_IMAGE = "tiles/water01.png";
+    // TILES: Grass
+    public static final String GRASS_00_IMAGE = "tiles/grass00.png";
+    public static final String GRASS_01_IMAGE = "tiles/grass01.png";
+
+    // TILES: Water
+    public static final String WATER_00_IMAGE = "tiles/water00.png";
+    public static final String WATER_01_IMAGE = "tiles/water01.png";
+    public static final String WATER_02_IMAGE = "tiles/water02.png";
+    public static final String WATER_03_IMAGE = "tiles/water03.png";
+    public static final String WATER_04_IMAGE = "tiles/water04.png";
+    public static final String WATER_05_IMAGE = "tiles/water05.png";
+    public static final String WATER_06_IMAGE = "tiles/water06.png";
+    public static final String WATER_07_IMAGE = "tiles/water07.png";
+    public static final String WATER_08_IMAGE = "tiles/water08.png";
+    public static final String WATER_09_IMAGE = "tiles/water09.png";
+    public static final String WATER_10_IMAGE = "tiles/water10.png";
+    public static final String WATER_11_IMAGE = "tiles/water11.png";
+    public static final String WATER_12_IMAGE = "tiles/water12.png";
+    public static final String WATER_13_IMAGE = "tiles/water13.png";
+
+    // TILES: Road
+    public static final String ROAD_00_IMAGE = "tiles/road00.png";
+    public static final String ROAD_01_IMAGE = "tiles/road01.png";
+    public static final String ROAD_02_IMAGE = "tiles/road02.png";
+    public static final String ROAD_03_IMAGE = "tiles/road03.png";
+    public static final String ROAD_04_IMAGE = "tiles/road04.png";
+    public static final String ROAD_05_IMAGE = "tiles/road05.png";
+    public static final String ROAD_06_IMAGE = "tiles/road06.png";
+    public static final String ROAD_07_IMAGE = "tiles/road07.png";
+    public static final String ROAD_08_IMAGE = "tiles/road08.png";
+    public static final String ROAD_09_IMAGE = "tiles/road09.png";
+    public static final String ROAD_10_IMAGE = "tiles/road10.png";
+    public static final String ROAD_11_IMAGE = "tiles/road11.png";
+    public static final String ROAD_12_IMAGE = "tiles/road12.png";
+
+    // TILES: Earth, Wall and Tree
     public static final String EARTH_IMAGE = "tiles/earth.png";
+    public static final String WALL_IMAGE = "tiles/wall.png";
     public static final String TREE_IMAGE = "tiles/tree.png";
-    public static final String ROAD_IMAGE = "tiles/road00.png";
 
     // Level File Path Config
     public static String homePath = System.getProperty("user.home");
